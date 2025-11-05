@@ -1,0 +1,46 @@
+{
+    "common":{
+        "preview": true,
+        "exit_key": "ESC",
+        "log_every_n_frames": 60
+    },
+    "macos":{
+        "format": "avfoundation",
+        "source": "0:none",
+        "options": {
+            "video_size": "1280x720",
+            "framerate": "30"
+        }
+    },
+    "windows": {
+        "format": "dshow",
+        "source": "video=Integrated Camera:audio=none",
+        "options": {
+            "video_size": "1280x720",
+            "framerate": "30"
+        }
+    },
+    "linux": {
+        "format": "v4l2",
+        "source": "/dev/video0",
+        "options": {
+            "video_size": "1280x720",
+            "framerate": "30",
+            "input_format": "mjpeg"
+        }
+    },
+    "recording": {
+        "output_file": "output.mp4",
+        "codec": "libx264",
+        "bitrate": "2000k"
+    },
+
+    "blazePoseCig":
+    {
+        "static_image_mode": false,
+        "min_detection_confidence": 0.5,
+        "min_tracking_confidence": 0.5,
+        "model_complexity": 1,
+        "record_output_path": "recording/camPose/"
+    }
+}
